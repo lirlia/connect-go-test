@@ -1,0 +1,16 @@
+syntax = "proto3";
+package hello.v1;
+
+option go_package = "example/gen/hello/v1;hellov1";
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string hello = 1;
+}
+
+service HelloService {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
