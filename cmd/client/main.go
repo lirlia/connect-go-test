@@ -33,5 +33,5 @@ func main() {
 		log.Println(err)
 		return
 	}
-	log.Println(res.Msg.Hello)
+	log.Println(res.Msg)
 }

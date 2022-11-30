@@ -1,6 +1,7 @@
 syntax = "proto3";
 package hello.v1;
 
+import "google/protobuf/timestamp.proto";
 option go_package = "example/gen/hello/v1;hellov1";
 
 message HelloRequest {
@@ -9,6 +10,14 @@ message HelloRequest {
 
 message HelloResponse {
   string hello = 1;
+  AnyStruct any = 2;
+  repeated int32 repeated_int = 3;
+}
+
+message AnyStruct {
+  string name = 1;
+  int32 id = 2;
+  google.protobuf.Timestamp created_at = 3;
 }
 
 service HelloService {
